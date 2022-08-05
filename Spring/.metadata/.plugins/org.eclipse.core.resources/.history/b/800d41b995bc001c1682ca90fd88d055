@@ -1,0 +1,205 @@
+package com.springlec.base0701.dao;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import java.sql.SQLException;
+
+import java.util.ArrayList;
+
+
+
+
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+
+import com.springlec.base0701.dto.BDto;
+import com.springlec.base0701.util.Constant;
+
+public class BDao {
+	
+	JdbcTemplate template;
+	
+	
+//	DataSource dataSource;
+//	//class
+	public BDao()	{
+		this.template = Constant.template;
+//		try {
+//			Context context = new InitialContext();
+//			dataSource = (DataSource)context.lookup("java:comp/env/jdbc/mvc");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+	}
+	
+	public ArrayList<BDto> list(){
+		ArrayList<BDto> dtos = null;
+		String query = "select bId,bName,bTitle,bContent,bDate from mvc_board";
+		dtos = (ArrayList<BDto>)template.query(query,new BeanPropertyRowMapper<BDto>(BDto.class));
+		return dtos;
+	
+	
+		
+//		ArrayList<BDto> dtos = new ArrayList<BDto>();
+//		Connection conn = null;
+//		PreparedStatement psmt = null;
+//		ResultSet rs =null;
+//		
+//		try {
+//			conn = dataSource.getConnection();
+//			String query = "select bId,bName,bTitle,bContent,bDate from mvc_board";
+//			psmt = conn.prepareStatement(query);
+//			rs = psmt.executeQuery();
+//			
+//			while(rs.next()) {
+//				int bId = rs.getInt("bId");
+//				String bName = rs.getString("bName");
+//				String bTitle = rs.getString("bTitle");
+//				String bContent = rs.getString("bContent");
+//				Timestamp bDate = rs.getTimestamp("bDate");
+//				
+//				BDto dto = new BDto(bId, bName, bTitle, bContent, bDate);
+//				dtos.add(dto);
+//				
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(rs != null) rs.close();	//data 있으면 종료 
+//				if(psmt != null) psmt.close();
+//				if(conn != null) conn.close();
+//			} catch (Exception e2) {
+//				e2.printStackTrace();
+//			}
+//		}
+//		
+//	return dtos;
+	}
+//	public ArrayList<BDto> list(){
+//		ArrayList<BDto> dtos = new ArrayList<BDto>();
+//		Connection conn = null;
+//		PreparedStatement psmt = null;
+//		ResultSet rs =null;
+//		
+//		try {
+//			conn = dataSource.getConnection();
+//			String query = "select bId,bName,bTitle,bContent,bDate from mvc_board";
+//			psmt = conn.prepareStatement(query);
+//			rs = psmt.executeQuery();
+//			
+//			while(rs.next()) {
+//				int bId = rs.getInt("bId");
+//				String bName = rs.getString("bName");
+//				String bTitle = rs.getString("bTitle");
+//				String bContent = rs.getString("bContent");
+//				Timestamp bDate = rs.getTimestamp("bDate");
+//				
+//				BDto dto = new BDto(bId, bName, bTitle, bContent, bDate);
+//				dtos.add(dto);
+//				
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(rs != null) rs.close();	//data 있으면 종료 
+//				if(psmt != null) psmt.close();
+//				if(conn != null) conn.close();
+//			} catch (Exception e2) {
+//				e2.printStackTrace();
+//			}
+//		}
+//		
+//		return dtos;
+//	}
+	
+//	public BDto contentView(String sbId) {
+//		BDto dto = null;
+//		Connection conn = null;
+//		PreparedStatement psmt = null;
+//		ResultSet rs =null;
+//		
+//		try {
+//			conn = dataSource.getConnection();
+//			String query = "select bId,bName,bTitle,bContent from mvc_board";
+//			psmt = conn.prepareStatement(query);
+//			psmt.setInt(1,Integer.parselnt(sbId));
+//			rs = psmt.executeQuery();
+//			
+//			if(rs.next())	{
+//				int bId = rs.getInt("bId");
+//				String bName = rs.getString("bName");
+//				String bTitle = rs.getString("bTitle");
+//				String bContent = rs.getString("bContent");
+//				
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				if(rs != null) rs.close();	//data 있으면 종료 
+//				if(psmt != null) psmt.close();
+//				if(conn != null) conn.close();
+//			} catch (Exception e2) {
+//				e2.printStackTrace();// TODO: handle exception
+//			}
+//		}
+//	}
+	public void write(final String bName,final String bTitle,final String bContent) {
+		this.template.update(new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				// TODO Auto-generated method stub
+				String query = "insert into mvc_board (bName,bTitle,bContent) values (?,?,?,now())";
+				PreparedStatement psmt = con.prepareStatement(query);
+				psmt.setString(1, bName);
+				psmt.setString(2, bTitle);
+				psmt.setString(3, bContent);
+				
+				return psmt;
+			}
+		});
+	
+	}
+	
+	
+	
+//	Connection conn = null;
+//		PreparedStatement psmt = null;
+//		ResultSet rs =null;
+//		
+	
+	
+	
+	
+//		try {
+//			conn = dataSource.getConnection();
+//			String query = "insert into mvc_board (bName,bTitle,bContent) values (?,?,?)";
+//			psmt = conn.prepareStatement(query);
+//			psmt.setString(1, bName);
+//			psmt.setString(2, bTitle);
+//			psmt.setString(3, bContent);
+//			psmt.executeUpdate();
+//				
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				if(rs != null) rs.close();	//data 있으면 종료 
+//				if(psmt != null) psmt.close();
+//				if(conn != null) conn.close();
+//			} catch (Exception e2) {
+//				e2.printStackTrace();// TODO: handle exception
+//			}
+//		}
+//	}
+//	
+	
+	
+}

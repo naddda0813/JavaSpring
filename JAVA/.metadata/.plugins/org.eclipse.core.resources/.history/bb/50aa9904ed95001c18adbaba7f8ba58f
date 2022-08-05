@@ -1,0 +1,16 @@
+package com.javalec.basse;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		
+		String[] name = {"James", "Cathy", "Kenny", "Martin", "Crystal"} ;
+		
+		System.out.print(name+"의 신장을 입력하세요!");
+		
+		
+		
+		
+	}
+
+}

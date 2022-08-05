@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.lang.model.util.ElementScanner14"/>
+    <fullyQualifiedTypeName name="java.nio.channels.ScatteringByteChannel"/>
+    <fullyQualifiedTypeName name="com.javalec.base.Main"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Korean"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Addition"/>
+    <fullyQualifiedTypeName name="java.util.function.Function"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Function"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Calc"/>
+    <fullyQualifiedTypeName name="com.javalec.function.ConstCalc"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Gugudan"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Gugu"/>
+    <fullyQualifiedTypeName name="com.javalec.function.FieldDan"/>
+    <fullyQualifiedTypeName name="com.javalec.function.ConstDan"/>
+    <fullyQualifiedTypeName name="com.javalec.function.AdditionJY"/>
+    <fullyQualifiedTypeName name="com.javalec.function.SumJ"/>
+    <fullyQualifiedTypeName name="com.javalec.function.GugudanJE"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Multiple"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Gopsem"/>
+    <fullyQualifiedTypeName name="com.javalec.function.MultiCalc"/>
+    <fullyQualifiedTypeName name="com.javalec.function.Car"/>
+    <fullyQualifiedTypeName name="com.javalec.base.FirstSon"/>
+    <fullyQualifiedTypeName name="com.javalec.base.SecondSon"/>
+    <fullyQualifiedTypeName name="com.javalec.base.MamaBag"/>
+    <fullyQualifiedTypeName name="com.javalec.base.Add"/>
+    <fullyQualifiedTypeName name="com.javalec.base.StoreHQ"/>
+    <fullyQualifiedTypeName name="com.javalec.base.StoreShop1"/>
+    <fullyQualifiedTypeName name="com.javalec.base.StoreShop2"/>
+    <fullyQualifiedTypeName name="com.javalec.base.Main.SumEvenOdd"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.javalec.base.Customer"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.awt.desktop.PrintFilesEvent"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

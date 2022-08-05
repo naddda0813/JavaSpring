@@ -1,0 +1,30 @@
+package com.javalec.basse;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//문자열 배열 7개를 생성
+		String[] str = new String[7];
+		System.out.println(str);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

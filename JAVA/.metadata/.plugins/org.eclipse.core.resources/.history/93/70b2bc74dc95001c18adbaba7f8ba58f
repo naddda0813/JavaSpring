@@ -1,0 +1,46 @@
+package com.javalec.basse;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//문자열 배열 7개를 생성
+		String[] str = new String[7];
+		
+		str[0] = "sun";
+		str[1] = "mon";
+		str[2] = "tue";
+		str[3] = "wed";
+		str[4] = "thu";
+		str[5] = "fri";
+		str[6] = "sat";
+		
+		for(int i=0; i<str.length;i++)	{
+		//	System.out.println(str[i]);
+			
+		}
+		System.out.println(str[str.length-1]);	//마지막에서 두번째껄 두번 반복
+		
+		
+	//	System.out.println(str.length);			// 길이 알려줌
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
