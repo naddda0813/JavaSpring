@@ -1,0 +1,45 @@
+
+
+package com.javalec.ascent.command;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.javalec.ascent.dao.adaop;
+import com.javalec.bbs.dao.BDao;
+import com.javalec.bbs.dto.BDto;
+
+public class APp01Command implements acommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+		adaop dao = new adaop();
+		ArrayList<adto> dtos = dao.APp01list();
+		request.setAttribute("APp01list", dtos);
+		   
+		   String query = "select productCode,productName,productDetail from product";
+		   
+		   
+		   try{
+		      Class.forName("com.mysql.cj.jdbc.Driver");
+		      Connection conn_mysql = DriverManager.getConnection(url_mysql, id_mysql, pw_mysql);
+		      Statement stmt_mysql = conn_mysql.createStatement();
+		      
+		      ResultSet rs = stmt_mysql.executeQuery(query);      //데이터베이스 준비 완료
+		
+	
+	      //데이터 있는 만큼 반복하면서 돔
+	      while(rs.next()){
+	%>
+		
+		
+	}
+
+		   
+}
+	
+}

@@ -1,0 +1,66 @@
+package com.javalec.ascent.homecontroller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.javalec.ascent.command.APp01Command;
+import com.javalec.ascent.command.acommand;
+
+
+
+@WebServlet("*.do")
+public class homecontroller extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+    public homecontroller() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+	
+	private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("actionDo");
+		request.setCharacterEncoding("utf-8"); 
+
+
+	String viewPage = null;
+	acommand command = null;		// null값 주기 
+	
+	String uri = request.getRequestURI();
+	String conPath = request.getContextPath();
+	String com = uri.substring(conPath.length()); //
+	
+	switch (com) {
+	case("/main.do"):
+		command = new APp01Command() ;
+		command.execute(request, response);
+		viewPage = "main.jsp";
+	case("/perfumelist.do"):
+		command = new APp01Command() ;
+		command.execute(request, response);
+		viewPage = "Pplist.jsp";
+	}
+	
+	
+	RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+	dispatcher.forward(request, response);
+	}
+}
